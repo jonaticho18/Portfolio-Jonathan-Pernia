@@ -3,264 +3,468 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jonathan Pernia — Performance Marketing Portfolio</title>
+<title>Jonathan Pernia — Paid Media Specialist</title>
+<meta name="description" content="Paid media specialist — Meta & Google Ads, conversion tracking, automation and reporting. 6+ years with US law firms, a HealthTech SaaS, e-commerce brands and local businesses.">
+<meta property="og:title" content="Jonathan Pernia — Paid Media Specialist">
+<meta property="og:description" content="Meta & Google Ads, built on clean data: tracking, automation and reporting.">
+<meta property="og:image" content="https://jonaticho18.github.io/Portfolio-Jonathan-Pernia/assets/jonathan-pernia.webp">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1424'/%3E%3Ccircle cx='9' cy='16' r='3' fill='%233B82F6'/%3E%3Ccircle cx='23' cy='16' r='3' fill='%23F5B942'/%3E%3Cpath d='M12 16h8' stroke='%233B82F6' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0A0E12;
-    --panel:#10161D;
-    --panel-2:#141B23;
-    --border:#1E2731;
-    --text:#E7EDF3;
-    --muted:#8494A3;
-    --accent:#35D399;
-    --accent-dim:#1F6B4E;
-    --amber:#F2A93B;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
-  a{color:inherit;text-decoration:none;}
+    --bg:#0B1424;
+    --bg-2:#0E1A2E;
+    --panel:#111E33;
+    --panel-2:#15243C;
+    --border:#1F2E48;
+    --border-2:#2A3D5E;
+    --text:#E7EDF6;
+    --text-2:#B9C4D6;
+    --muted:#8391A9;
+    --blue:#3B82F6;
+    --blue-soft:#7FAEFF;
+    --blue-wash:rgba(59,130,246,.12);
+    --amber:#F5B942;
 
-  /* ---- HERO ---- */
-  header{padding:72px 0 40px;border-bottom:1px solid var(--border);}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12.5px;color:var(--accent);letter-spacing:.06em;
-    display:flex;align-items:center;gap:8px;margin-bottom:18px;
+    --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+    --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
   }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s infinite;}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:clamp(32px,5vw,48px);
-    letter-spacing:-0.02em;
-    margin-bottom:10px;
-  }
-  .role{font-size:17px;color:var(--muted);max-width:560px;margin-bottom:28px;}
-  .stack-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .chip{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);
-    border:1px solid var(--border);padding:5px 10px;border-radius:5px;background:var(--panel);
-  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-  /* ---- stat strip: signature element ---- */
-  .stats{
-    margin-top:36px;display:flex;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:20;background:rgba(11,20,36,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+  .brand{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand-mark{display:flex;align-items:center;gap:3px}
+  .brand-mark i{display:block;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+  .brand-mark i:last-child{background:var(--amber)}
+  .brand-mark b{display:block;width:10px;height:1.5px;background:var(--blue)}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:var(--text-2)}
+  .nav-links a:not(.btn):hover{color:var(--text)}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--border-2);color:var(--text);transition:background .2s,border-color .2s,transform .2s;white-space:nowrap}
+  .btn:hover{border-color:var(--blue);background:var(--blue-wash)}
+  .btn-primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn-primary:hover{background:#2F74E6;border-color:#2F74E6}
+  .btn svg{width:16px;height:16px;flex:none}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
+  .status{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-soft);border:1px solid var(--border-2);background:var(--bg-2);padding:6px 12px;border-radius:999px;margin-bottom:26px}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:#34D399;box-shadow:0 0 0 3px rgba(52,211,153,.18)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+  h1 .soft{color:var(--muted);font-weight:700}
+  .lede{font-size:18px;color:var(--text-2);max-width:54ch;margin-top:22px}
+  .lede strong{color:var(--text);font-weight:600}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+
+  .portrait{position:relative;justify-self:end;width:100%;max-width:380px}
+  .portrait-frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:1/1;border:1px solid var(--border-2);box-shadow:0 30px 60px -25px rgba(0,0,0,.6),0 0 0 6px var(--bg-2)}
+  .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+  .portrait-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,36,0) 62%,rgba(11,20,36,.55) 100%)}
+  .portrait-tag{position:absolute;left:-18px;bottom:28px;z-index:2;background:var(--panel);border:1px solid var(--border-2);border-radius:12px;padding:11px 14px;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+  .portrait-tag .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .portrait-tag .v{font-size:14px;font-weight:600;margin-top:2px}
+
+  /* ---------- pipeline (signature) ---------- */
+  .pipeline{border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,var(--bg-2),var(--bg));padding:28px 28px 26px}
+  .pipe-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+  .pipe-head h2{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.015em}
+  .pipe-head p{color:var(--muted);font-size:14.5px;max-width:52ch}
+  .stages{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .stages::before{content:"";position:absolute;left:12px;right:12px;top:11px;height:1.5px;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 70%,var(--amber) 100%);opacity:.75}
+  .stage{position:relative;padding-right:18px}
+  .node{position:relative;width:24px;height:24px;border-radius:50%;background:var(--bg);border:1.5px solid var(--blue);display:grid;place-items:center;margin-bottom:16px}
+  .node::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue)}
+  .stage:last-child .node{border-color:var(--amber)}
+  .stage:last-child .node::after{background:var(--amber);box-shadow:0 0 12px var(--amber)}
+  .stage .step{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+  .stage h3{font-family:var(--display);font-size:18px;font-weight:700;margin:3px 0 6px;letter-spacing:-.01em}
+  .stage p{font-size:14px;color:var(--text-2)}
+  .stage .tools{font-family:var(--mono);font-size:11.5px;color:var(--blue-soft);margin-top:10px;line-height:1.6}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  .stat{padding:18px 22px;border-right:1px solid var(--border)}
+  .stat:last-child{border-right:0}
+  .stat .num{font-family:var(--display);font-size:30px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:1px}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0 0}
+  .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:20px;margin-bottom:28px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:10px}
+  h2.title{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
+  .sec-sub{color:var(--muted);font-size:15.5px;max-width:60ch;margin-top:10px}
+
+  /* experience */
+  .roles{border-top:1px solid var(--border)}
+  .role{display:grid;grid-template-columns:170px 1fr auto;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);align-items:baseline}
+  .role .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .role h3{font-size:17px;font-weight:600;letter-spacing:-.005em}
+  .role .org{color:var(--text-2);font-size:14.5px;margin-top:2px}
+  .role .desc{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:62ch}
+  .role .where{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+
+  /* reports */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{position:relative;display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;transition:border-color .2s,transform .2s,background .2s}
+  .card:hover{border-color:var(--blue);background:var(--panel-2);transform:translateY(-2px)}
+  .card .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-soft)}
+  .card .tag.alt{color:var(--amber)}
+  .card h3{font-size:16px;font-weight:600;letter-spacing:-.005em;padding-right:22px}
+  .card .meta{font-size:13.5px;color:var(--muted)}
+  .card .arrow{position:absolute;top:18px;right:18px;color:var(--muted);transition:color .2s,transform .2s}
+  .card:hover .arrow{color:var(--blue-soft);transform:translate(2px,-2px)}
+
+  /* funnels */
+  .funnels{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .group{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px 8px}
+  .group h3{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .flink{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 0;border-bottom:1px dashed var(--border);font-size:14.5px;color:var(--text-2)}
+  .flink:last-child{border-bottom:0}
+  .flink span:last-child{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+  .flink:hover{color:var(--text)}
+  .flink:hover span:last-child{color:var(--blue-soft)}
+
+  /* site */
+  .site{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:linear-gradient(135deg,var(--panel),var(--bg-2));border:1px solid var(--border);border-radius:18px;padding:28px}
+  .site h3{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.015em}
+  .site p{color:var(--text-2);font-size:15px;max-width:60ch;margin-top:8px}
+  .site .note{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--amber)}
+
+  /* contact */
+  .contact{margin:96px 0 0;padding:56px 0 64px;border-top:1px solid var(--border);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+  .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.4vw,48px);letter-spacing:-.03em;line-height:1.02}
+  .contact p{color:var(--text-2);margin-top:14px;max-width:46ch}
+  .contact-list{display:flex;flex-direction:column;gap:10px}
+  .contact-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);transition:border-color .2s}
+  .contact-row:hover{border-color:var(--blue)}
+  .contact-row .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .contact-row .v{font-size:15px;font-weight:500;margin-top:1px;word-break:break-all}
+  .contact-row .go{color:var(--blue-soft);flex:none}
+  footer{padding:0 0 40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:40px;padding-top:48px}
+    .portrait{justify-self:start;max-width:300px;order:-1}
+    .stages{grid-template-columns:1fr 1fr;row-gap:28px}
+    .stages::before{display:none}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--border)}
+    .grid{grid-template-columns:1fr 1fr}
+    .funnels{grid-template-columns:1fr}
+    .role{grid-template-columns:1fr;gap:4px}
+    .role .where{white-space:normal}
+    .contact{grid-template-columns:1fr}
   }
-  .stat{flex:1;padding:16px 20px;border-right:1px solid var(--border);}
-  .stat:last-child{border-right:none;}
-  .stat .num{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--accent);}
-  .stat .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:2px;}
-
-  /* ---- SECTIONS ---- */
-  section{padding:56px 0;border-bottom:1px solid var(--border);}
-  section:last-of-type{border-bottom:none;}
-  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;}
-  .sec-num{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:13px;}
-  h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;letter-spacing:-.01em;}
-  .sec-sub{color:var(--muted);font-size:14.5px;margin:6px 0 28px;max-width:640px;}
-
-  /* featured site card */
-  .featured{
-    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
-    background:linear-gradient(135deg,var(--panel),var(--panel-2));
-    border:1px solid var(--border);border-radius:10px;padding:24px 26px;
-    transition:border-color .2s;
+  @media (max-width:640px){
+    .nav-links a:not(.btn){display:none}
+    .hero{padding-top:36px}
+    .portrait{max-width:220px}
+    .portrait-tag{left:auto;right:-12px;bottom:16px}
+    .stages{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+    .site{grid-template-columns:1fr}
+    .pipeline{padding:22px 18px}
+    .sec-head{grid-template-columns:1fr}
+    .sec-head .btn{justify-self:start}
+    .stat .num{font-size:24px}
+    .stat:last-child .num{font-size:19px;padding-top:4px}
+    section{padding-top:64px}
   }
-  .featured:hover{border-color:var(--accent-dim);}
-  .featured .ftitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin-bottom:4px;}
-  .featured .fdesc{color:var(--muted);font-size:14px;max-width:480px;}
-  .featured .flang{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);}
-  .go{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--bg);background:var(--accent);
-    padding:9px 16px;border-radius:6px;white-space:nowrap;font-weight:500;
-  }
-
-  /* grid cards */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;}
-  .card{
-    background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:18px 20px;
-    transition:border-color .2s, transform .2s;
-  }
-  .card:hover{border-color:var(--accent-dim);transform:translateY(-2px);}
-  .card .ctitle{font-weight:600;font-size:14.5px;margin-bottom:5px;}
-  .card .ctag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;display:inline-block;}
-  .card .cmeta{color:var(--muted);font-size:12.5px;}
-
-  /* funnels grouped list */
-  .group{margin-bottom:26px;}
-  .group-h{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-  .flink{display:flex;justify-content:space-between;align-items:center;padding:10px 4px;border-bottom:1px dashed var(--border);font-size:14px;gap:12px;}
-  .flink:last-child{border-bottom:none;}
-  .flink .fname{color:var(--text);}
-  .flink .furl{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;}
-  .flink:hover .fname{color:var(--accent);}
-
-  footer{padding:56px 0 72px;text-align:center;}
-  footer .fmain{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-bottom:10px;}
-  footer .fsub{color:var(--muted);font-size:14px;}
-
-  @media(max-width:600px){
-    header{padding:52px 0 32px;}
-    section{padding:40px 0;}
-    .featured{flex-direction:column;align-items:flex-start;}
-    .stats{flex-direction:column;}
-    .stat{border-right:none;border-bottom:1px solid var(--border);}
-    .stat:last-child{border-bottom:none;}
-    .flink{flex-direction:column;align-items:flex-start;gap:2px;}
-  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="eyebrow"><span class="dot"></span>AVAILABLE FOR FRACTIONAL / CONTRACT WORK</div>
-    <h1>Jonathan Pernia</h1>
-    <p class="role">Performance marketer — paid media, funnels, and tracking implementation for legal, ecommerce, and DTC clients. 6+ years building and running campaigns end to end.</p>
-    <div class="stack-row">
-      <span class="chip">Meta Ads</span><span class="chip">Google Ads</span><span class="chip">GA4</span>
-      <span class="chip">GTM</span><span class="chip">GoHighLevel</span><span class="chip">ClickFunnels</span>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Jonathan Pernia — home">
+      <span class="brand-mark" aria-hidden="true"><i></i><b></b><i></i></span>
+      Jonathan Pernia
+    </a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#reports">Reports</a>
+      <a href="#funnels">Funnels</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="assets/Jonathan-Pernia-CV.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+        CV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="status">Open to full-time remote roles</div>
+      <h1>I run paid media <span class="soft">— and I build the machinery around it.</span></h1>
+      <p class="lede"><strong>Paid Media Specialist · Meta &amp; Google Ads.</strong> 6+ years running campaigns for US law firms, a HealthTech SaaS, e-commerce brands and local businesses. Systems analyst by training, so I also build what most media buyers hand off: conversion tracking, funnels, integrations and reporting.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="assets/Jonathan-Pernia-CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          Download CV
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/jonathan-pernia/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:jonaticho@hotmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email
+        </a>
+      </div>
     </div>
 
-    <div class="stats">
-      <div class="stat"><div class="num">12</div><div class="lbl">Landing pages built</div></div>
-      <div class="stat"><div class="num">12</div><div class="lbl">Client reports delivered</div></div>
-      <div class="stat"><div class="num">6+</div><div class="lbl">Years in paid media</div></div>
-    </div>
+    <figure class="portrait">
+      <div class="portrait-frame">
+        <img src="assets/jonathan-pernia.webp" alt="Portrait of Jonathan Pernia" width="1080" height="1080">
+      </div>
+      <figcaption class="portrait-tag">
+        <div class="k">Based in</div>
+        <div class="v">Córdoba, AR · Remote · EN / ES</div>
+      </figcaption>
+    </figure>
   </header>
 
-  <!-- SITE -->
-  <section id="site">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Personal Site</h2></div>
-    <p class="sec-sub">My own site, where I showcase current client work.</p>
-    <a class="featured" href="https://metalmarketing.online/" target="_blank">
+  <!-- PIPELINE -->
+  <div class="pipeline" aria-labelledby="pipe-title">
+    <div class="pipe-head">
+      <h2 id="pipe-title">From ad click to report — one person, no handoffs</h2>
+      <p>Most teams split this across a media buyer, a tracking person and an analyst. I cover the whole chain.</p>
+    </div>
+    <ol class="stages">
+      <li class="stage">
+        <div class="node" aria-hidden="true"></div>
+        <div class="step">01</div>
+        <h3>Campaigns</h3>
+        <p>Strategy, setup, creative and audience testing, budget allocation.</p>
+        <div class="tools">Meta Ads · Google Ads</div>
+      </li>
+      <li class="stage">
+        <div class="node" aria-hidden="true"></div>
+        <div class="step">02</div>
+        <h3>Tracking</h3>
+        <p>Conversion data you can trust, from the click to the CRM.</p>
+        <div class="tools">GTM · GA4 · Pixel &amp; CAPI · CallRail</div>
+      </li>
+      <li class="stage">
+        <div class="node" aria-hidden="true"></div>
+        <div class="step">03</div>
+        <h3>Automation</h3>
+        <p>Lead flows, follow-ups and integrations that run on their own.</p>
+        <div class="tools">Make · Zapier · n8n · CRM · webhooks</div>
+      </li>
+      <li class="stage">
+        <div class="node" aria-hidden="true"></div>
+        <div class="step">04</div>
+        <h3>Reporting</h3>
+        <p>Reports that answer the question someone actually asked.</p>
+        <div class="tools">Client reports · Sheets · AI tooling</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">6+</div><div class="lbl">years in paid media</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">client reports below</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">funnels &amp; landing pages</div></div>
+    <div class="stat"><div class="num">US · IE · LATAM</div><div class="lbl">markets worked</div></div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-head">
       <div>
-        <div class="ftitle">metalmarketing.online</div>
-        <div class="fdesc">Includes a working contact form wired to a Google Sheet — an Apps Script sends me an instant email notification on every new submission. End-to-end automation, built with AI-assisted tools.</div>
-        <span class="flang">⚠ site content is in Spanish</span>
+        <div class="eyebrow">Experience</div>
+        <h2 class="title">Where I've done this</h2>
       </div>
-      <span class="go">Visit site →</span>
-    </a>
+      <a class="btn" href="assets/Jonathan-Pernia-CV.pdf" target="_blank" rel="noopener">Full CV (PDF)</a>
+    </div>
+    <div class="roles">
+      <div class="role">
+        <div class="when">Jan 2026 – Now</div>
+        <div>
+          <h3>Paid Media &amp; Marketing Operations Specialist</h3>
+          <div class="org">EchoMind AI · HealthTech SaaS</div>
+          <p class="desc">Paid campaigns across Meta and Google, the tracking layer (GTM, GA4, CRM-connected journeys) and lead-nurturing automation with Make and webhooks.</p>
+        </div>
+        <div class="where">Ireland · remote</div>
+      </div>
+      <div class="role">
+        <div class="when">Dec 2020 – Now</div>
+        <div>
+          <h3>Paid Media Specialist</h3>
+          <div class="org">JON-ADS Marketing · Freelance</div>
+          <p class="desc">Meta and Google Ads for service companies, local manufacturers and e-commerce brands: full campaign cycle, WhatsApp and Instagram lead funnels, reporting for owners.</p>
+        </div>
+        <div class="where">Argentina · remote</div>
+      </div>
+      <div class="role">
+        <div class="when">Aug 2024 – Dec 2025</div>
+        <div>
+          <h3>Meta Ads Specialist</h3>
+          <div class="org">Law Firm Marketing Pros (US agency) · via Virtrify</div>
+          <p class="desc">Meta Ads for US law firms in the Digital Lead Funnels department: full funnels built from scratch, CRM and Zapier follow-ups, KPI tracking with CallRail.</p>
+        </div>
+        <div class="where">Miami agency · remote</div>
+      </div>
+      <div class="role">
+        <div class="when">Dec 2020 – Sep 2024</div>
+        <div>
+          <h3>Media Buyer</h3>
+          <div class="org">Pyme Digital Agency</div>
+          <p class="desc">Google and Meta Ads accounts across LATAM and the US, with tracking built on GTM, GA4, pixels, events and UTMs.</p>
+        </div>
+        <div class="where">Argentina · remote</div>
+      </div>
+      <div class="role">
+        <div class="when">Dec 2019 – Mar 2020</div>
+        <div>
+          <h3>Junior Media Buyer</h3>
+          <div class="org">CFContent</div>
+          <p class="desc">Campaign setup, optimization and A/B testing alongside senior buyers for international clients.</p>
+        </div>
+        <div class="where">United States</div>
+      </div>
+    </div>
   </section>
 
   <!-- REPORTS -->
   <section id="reports">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Client Performance Reports</h2></div>
-    <p class="sec-sub">Interactive HTML reports I build and deliver to clients — Meta/Google Ads performance, campaign breakdowns, and proposals.</p>
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Client reports</div>
+        <h2 class="title">Reports I build and deliver</h2>
+        <p class="sec-sub">Interactive HTML reports on Meta Ads performance, campaign breakdowns and proposals — the actual documents clients received.</p>
+      </div>
+    </div>
     <div class="grid">
-      <a class="card" href="https://jonaticho18.github.io/Reporte-Wakeboard-Argentina-Noviembre2025/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Wakeboard Argentina — Nov 2025</div>
-        <div class="cmeta">Monthly performance report</div>
+      <a class="card" href="https://jonaticho18.github.io/Reporte-Wakeboard-Argentina-Noviembre2025/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Wakeboard Argentina — Nov 2025</h3><span class="meta">Monthly performance report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Informe_Wakeboard_Argentina_Ene22_Feb23/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Wakeboard Argentina — Jan/Feb</div>
-        <div class="cmeta">Multi-month performance report</div>
+      <a class="card" href="https://jonaticho18.github.io/Informe_Wakeboard_Argentina_Ene22_Feb23/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Wakeboard Argentina — Jan/Feb</h3><span class="meta">Multi-month performance report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Facebook-Ads-ACC-Reporte-de-Noviembre/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">ACC — November Report</div>
-        <div class="cmeta">Account performance summary</div>
+      <a class="card" href="https://jonaticho18.github.io/Facebook-Ads-ACC-Reporte-de-Noviembre/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>ACC — November</h3><span class="meta">Account performance summary</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/FB-Report-Club-de-Heroes-Podcast/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Club de Héroes Podcast</div>
-        <div class="cmeta">Campaign report</div>
+      <a class="card" href="https://jonaticho18.github.io/FB-Report-Club-de-Heroes-Podcast/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Club de Héroes Podcast</h3><span class="meta">Campaign report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Facebook-Report-Volv-a-Vos/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Volvé a Vos</div>
-        <div class="cmeta">Campaign report</div>
+      <a class="card" href="https://jonaticho18.github.io/Facebook-Report-Volv-a-Vos/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Volvé a Vos</h3><span class="meta">Campaign report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Facebook-Ads-Reels-Performance/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Reels Performance</div>
-        <div class="cmeta">Creative/placement breakdown</div>
+      <a class="card" href="https://jonaticho18.github.io/Facebook-Ads-Reels-Performance/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Reels Performance</h3><span class="meta">Creative and placement breakdown</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Polarizados-de-Arquitectura-C-rdoba/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Polarizados de Arquitectura</div>
-        <div class="cmeta">Córdoba — campaign report</div>
+      <a class="card" href="https://jonaticho18.github.io/Polarizados-de-Arquitectura-C-rdoba/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Polarizados de Arquitectura</h3><span class="meta">Córdoba — campaign report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/FB-Report-Traffic-Campaign-Miami-Event/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Traffic Campaign — Miami Event</div>
-        <div class="cmeta">Traffic campaign report</div>
+      <a class="card" href="https://jonaticho18.github.io/FB-Report-Traffic-Campaign-Miami-Event/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Traffic Campaign — Miami Event</h3><span class="meta">Traffic campaign report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/ADHD_followers_campaign_ene2026/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">ADHD Followers Campaign — Jan 2026</div>
-        <div class="cmeta">Growth campaign report</div>
+      <a class="card" href="https://jonaticho18.github.io/ADHD_followers_campaign_ene2026/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>ADHD Followers Campaign — Jan 2026</h3><span class="meta">Growth campaign report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Reporte-Glazing-Enero2026/" target="_blank">
-        <span class="ctag">Meta Ads</span>
-        <div class="ctitle">Glazing — January 2026</div>
-        <div class="cmeta">Monthly performance report</div>
+      <a class="card" href="https://jonaticho18.github.io/Reporte-Glazing-Enero2026/" target="_blank" rel="noopener">
+        <span class="tag">Meta Ads</span><h3>Glazing — January 2026</h3><span class="meta">Monthly performance report</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Case-of-Study-1/index.html#services" target="_blank">
-        <span class="ctag">Case Study</span>
-        <div class="ctitle">Case of Study 1</div>
-        <div class="cmeta">Services / case study page</div>
+      <a class="card" href="https://jonaticho18.github.io/Case-of-Study-1/index.html#services" target="_blank" rel="noopener">
+        <span class="tag alt">Case study</span><h3>Case Study 1</h3><span class="meta">Services and case study page</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://jonaticho18.github.io/Karen_Garnon_Proposal/" target="_blank">
-        <span class="ctag">Proposal</span>
-        <div class="ctitle">Karen Garnon — Proposal</div>
-        <div class="cmeta">Client proposal deck</div>
+      <a class="card" href="https://jonaticho18.github.io/Karen_Garnon_Proposal/" target="_blank" rel="noopener">
+        <span class="tag alt">Proposal</span><h3>Karen Garnon — Proposal</h3><span class="meta">Client proposal deck</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
     </div>
   </section>
 
   <!-- FUNNELS -->
   <section id="funnels">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Funnels & Landing Pages</h2></div>
-    <p class="sec-sub">Built in GoHighLevel (functionally equivalent to ClickFunnels) during my time at Law Firm Marketing Pros (Miami).</p>
-
-    <div class="group">
-      <div class="group-h">Estate Planning & Probate</div>
-      <div class="flink"><span class="fname">Estate Planning Webinar — PJI Law</span><a class="furl" href="https://estate-planning-webinar.pjilaw.com/optin" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Estate Planning Checklist — Free Guide</span><a class="furl" href="https://free-estate-planning-checklist.pjilaw.com/optin1680181539182" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Estate Planning Checklist — McCarthy Akers</span><a class="furl" href="https://estate-planning-checklist.mccarthyakers.com/optin" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Estate Planning Webinar — Law Office of Polly Tatum</span><a class="furl" href="https://free-estate-planning-webinar.lawofficeofpollytatum.com/optin" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Probate Checklist — Law Office of Polly Tatum</span><a class="furl" href="https://free-probate-checklist.lawofficeofpollytatum.com/optin" target="_blank">view →</a></div>
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Funnels &amp; landing pages</div>
+        <h2 class="title">Live funnels for US law firms</h2>
+        <p class="sec-sub">Opt-in funnels, webinar registrations and lead magnets I built during my time at Law Firm Marketing Pros (Miami). All still live.</p>
+      </div>
     </div>
-
-    <div class="group">
-      <div class="group-h">Personal Injury</div>
-      <div class="flink"><span class="fname">Personal Injury Webinar — SpeaksLaw</span><a class="furl" href="https://personal-injury-webinar.speakslaw.com/registration" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Personal Injury Claims Quiz — Heuser Law</span><a class="furl" href="https://personal-injury-claims-quiz-x.heuserlaw.com/optin1748013771053" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Personal Injury Webinar — HLGNY</span><a class="furl" href="https://personal-injury-webinar.hlgny.com/registration" target="_blank">view →</a></div>
-    </div>
-
-    <div class="group">
-      <div class="group-h">Immigration & Other Legal</div>
-      <div class="flink"><span class="fname">Immigration Webinar (Spanish) — Rivas Associates</span><a class="furl" href="https://webinar-gratuito-de-inmigracion.rivasassociates.com/registro" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Law Firm Reputation Scorecard — LFMP</span><a class="furl" href="https://law-firm-reputation-scorecard.lawfirmmarketingpros.com/optin" target="_blank">view →</a></div>
-      <div class="flink"><span class="fname">Free Guide — Albrecht Law Firm</span><a class="furl" href="https://free-guide.albrechtlawfirm.com/optin1725377177205" target="_blank">view →</a></div>
-    </div>
-
-    <div class="group">
-      <div class="group-h">Other Verticals</div>
-      <div class="flink"><span class="fname">Christmas Specials — Palm Beach Plastic Surgery (opt-in + confirmation)</span><a class="furl" href="https://christmas-specials.palmbeachplasticsurgery.com/optin1727450989381" target="_blank">view →</a></div>
+    <div class="funnels">
+      <div class="group">
+        <h3>Estate planning &amp; probate</h3>
+        <a class="flink" href="https://estate-planning-webinar.pjilaw.com/optin" target="_blank" rel="noopener"><span>Estate Planning Webinar — PJI Law</span><span>view ↗</span></a>
+        <a class="flink" href="https://free-estate-planning-checklist.pjilaw.com/optin1680181539182" target="_blank" rel="noopener"><span>Estate Planning Checklist — Free Guide</span><span>view ↗</span></a>
+        <a class="flink" href="https://estate-planning-checklist.mccarthyakers.com/optin" target="_blank" rel="noopener"><span>Estate Planning Checklist — McCarthy Akers</span><span>view ↗</span></a>
+        <a class="flink" href="https://free-estate-planning-webinar.lawofficeofpollytatum.com/optin" target="_blank" rel="noopener"><span>Estate Planning Webinar — Law Office of Polly Tatum</span><span>view ↗</span></a>
+        <a class="flink" href="https://free-probate-checklist.lawofficeofpollytatum.com/optin" target="_blank" rel="noopener"><span>Probate Checklist — Law Office of Polly Tatum</span><span>view ↗</span></a>
+      </div>
+      <div class="group">
+        <h3>Personal injury</h3>
+        <a class="flink" href="https://personal-injury-webinar.speakslaw.com/registration" target="_blank" rel="noopener"><span>Personal Injury Webinar — SpeaksLaw</span><span>view ↗</span></a>
+        <a class="flink" href="https://personal-injury-claims-quiz-x.heuserlaw.com/optin1748013771053" target="_blank" rel="noopener"><span>Personal Injury Claims Quiz — Heuser Law</span><span>view ↗</span></a>
+        <a class="flink" href="https://personal-injury-webinar.hlgny.com/registration" target="_blank" rel="noopener"><span>Personal Injury Webinar — HLGNY</span><span>view ↗</span></a>
+      </div>
+      <div class="group">
+        <h3>Immigration &amp; other legal</h3>
+        <a class="flink" href="https://webinar-gratuito-de-inmigracion.rivasassociates.com/registro" target="_blank" rel="noopener"><span>Immigration Webinar (Spanish) — Rivas Associates</span><span>view ↗</span></a>
+        <a class="flink" href="https://law-firm-reputation-scorecard.lawfirmmarketingpros.com/optin" target="_blank" rel="noopener"><span>Law Firm Reputation Scorecard — LFMP</span><span>view ↗</span></a>
+        <a class="flink" href="https://free-guide.albrechtlawfirm.com/optin1725377177205" target="_blank" rel="noopener"><span>Free Guide — Albrecht Law Firm</span><span>view ↗</span></a>
+      </div>
+      <div class="group">
+        <h3>Other verticals</h3>
+        <a class="flink" href="https://christmas-specials.palmbeachplasticsurgery.com/optin1727450989381" target="_blank" rel="noopener"><span>Christmas Specials — Palm Beach Plastic Surgery</span><span>view ↗</span></a>
+      </div>
     </div>
   </section>
 
+  <!-- SITE -->
+  <section id="site">
+    <div class="site">
+      <div>
+        <div class="eyebrow">My own site</div>
+        <h3>metalmarketing.online</h3>
+        <p>Where I show current client work. Its contact form writes to a Google Sheet, and an Apps Script emails me the moment someone submits. A small, end-to-end automation built with AI-assisted tools.</p>
+        <span class="note">Site content is in Spanish</span>
+      </div>
+      <a class="btn btn-primary" href="https://metalmarketing.online/" target="_blank" rel="noopener">Visit site ↗</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact" id="contact">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Let's talk performance.</h2>
+      <p>I'm open to full-time remote roles in Paid Media and Performance Marketing. English and Spanish.</p>
+    </div>
+    <div class="contact-list">
+      <a class="contact-row" href="mailto:jonaticho@hotmail.com"><div><div class="k">Email</div><div class="v">jonaticho@hotmail.com</div></div><span class="go" aria-hidden="true">↗</span></a>
+      <a class="contact-row" href="https://www.linkedin.com/in/jonathan-pernia/" target="_blank" rel="noopener"><div><div class="k">LinkedIn</div><div class="v">linkedin.com/in/jonathan-pernia</div></div><span class="go" aria-hidden="true">↗</span></a>
+      <a class="contact-row" href="assets/Jonathan-Pernia-CV.pdf" target="_blank" rel="noopener"><div><div class="k">CV</div><div class="v">Download PDF</div></div><span class="go" aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+
   <footer>
-    <div class="fmain">Let's talk performance.</div>
-    <div class="fsub">Jonathan Pernia — Performance Marketer</div>
+    <span>© 2026 Jonathan Pernia</span>
+    <span>Paid Media · Tracking · Automation</span>
   </footer>
-</div>
+</main>
 
 </body>
 </html>
