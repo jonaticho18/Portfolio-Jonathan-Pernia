@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Paid media case study: 16% more Instagram Direct conversations on 28% less spend after rebalancing a Meta message-ads account.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Message Ads Rebalance">
+<meta property="og:description" content="Paid media case study: 16% more Instagram Direct conversations on 28% less spend after rebalancing a Meta message-ads account.">
+<meta property="og:url" content="https://jonaticho18.github.io/Portfolio-Jonathan-Pernia/case-studies/message-ads-rebalance/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1B2D'/%3E%3Crect x='7' y='17' width='4' height='8' fill='%233B82F6'/%3E%3Crect x='14' y='12' width='4' height='13' fill='%233B82F6'/%3E%3Crect x='21' y='7' width='4' height='18' fill='%23F5B942'/%3E%3C/svg%3E">
+<title>Message Ads Rebalance — Jonathan Pernia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a single reading measure for the narrative; data tables break out wider, full-bleed on phones. */
+  :root{
+    --paper:#F6F8FB;
+    --surface:#FFFFFF;
+    --ink:#0F1B2D;
+    --ink-soft:#4B5870;
+    --ink-faint:#76819A;
+    --rule:#DCE2EC;
+    --signal:#2463EB;
+    --flag:#9A6310;
+    --flag-bg:#FDF4E3;
+    --good:#0C6E55;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0A1322;
+      --surface:#111E33;
+      --ink:#E8EEF7;
+      --ink-soft:#A3B1C6;
+      --ink-faint:#7C8AA2;
+      --rule:#1E2D47;
+      --signal:#6D99F7;
+      --flag:#F5B942;
+      --flag-bg:#1C2437;
+      --good:#43C8A0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0A1322;
+    --surface:#111E33;
+    --ink:#E8EEF7;
+    --ink-soft:#A3B1C6;
+    --ink-faint:#7C8AA2;
+    --rule:#1E2D47;
+    --signal:#6D99F7;
+    --flag:#F5B942;
+    --flag-bg:#1C2437;
+    --good:#43C8A0;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Instrument Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding-inline:20px;padding-block:clamp(32px,6vw,64px)}
+  .measure{max-width:64ch}
+
+  h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif;text-wrap:balance;margin:0}
+  h1{font-size:clamp(2rem,5.4vw,3.1rem);font-weight:700;line-height:1.04;letter-spacing:-.022em}
+  h2{font-size:1.32rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+  h3{font-size:1rem;font-weight:700}
+  p{margin:0}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--signal);
+  }
+  .lede{font-size:1.14rem;color:var(--ink-soft);margin-top:18px}
+  .lede b{color:var(--ink);font-weight:600}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:30px;padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.78rem;color:var(--ink-faint);
+  }
+  .meta span{white-space:nowrap}
+  .meta b{color:var(--ink-soft);font-weight:500}
+
+  section{margin-top:clamp(40px,6vw,66px)}
+  section > h2 + *{margin-top:14px}
+  .stack{display:flex;flex-direction:column;gap:14px}
+
+  /* headline figures */
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .tile{
+    min-width:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+    padding:20px 18px 18px;
+  }
+  .tile .k{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-faint);
+  }
+  .tile .v{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;letter-spacing:-.03em;
+    font-size:clamp(1.9rem,5.4vw,2.6rem);line-height:1;margin-top:12px;
+    font-variant-numeric:tabular-nums;color:var(--good);
+  }
+  .tile.up .v{color:var(--signal)}
+  .tile .n{font-size:.84rem;color:var(--ink-soft);margin-top:8px;font-variant-numeric:tabular-nums}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+  caption{
+    caption-side:top;text-align:left;padding:14px 16px 0;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-faint);
+  }
+  th,td{padding:11px 16px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:170px}
+  thead th{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500;font-size:.72rem;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);
+  }
+  tbody td{font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+  tbody th{font-weight:600;color:var(--ink);font-size:.95rem}
+  tr:last-child th,tr:last-child td{border-bottom:none}
+  .total th,.total td{background:var(--flag-bg);color:var(--ink);font-weight:600}
+  .delta{font-weight:600;color:var(--good)}
+  .delta.up{color:var(--signal)}
+  .off{color:var(--ink-faint);font-style:italic}
+  .live{
+    display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
+    border:1px solid currentColor;border-radius:2px;padding:1px 5px;margin-left:8px;vertical-align:1px;
+  }
+  .note{font-size:.84rem;color:var(--ink-faint);margin-top:10px}
+
+  /* change log */
+  ol.log{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:0}
+  ol.log li{display:grid;grid-template-columns:86px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--rule)}
+  ol.log li:first-child{border-top:none;padding-top:0}
+  ol.log time{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;color:var(--signal);
+    letter-spacing:.04em;padding-top:3px;
+  }
+  ol.log b{display:block;font-weight:600}
+  ol.log p{color:var(--ink-soft);font-size:.94rem;margin-top:3px}
+
+  ul.plain{margin:14px 0 0;padding-left:1.15em;color:var(--ink-soft);display:flex;flex-direction:column;gap:9px}
+  ul.plain li::marker{color:var(--signal)}
+  ul.plain b{color:var(--ink);font-weight:600}
+
+  .callout{
+    margin-top:22px;padding:18px 20px;background:var(--surface);
+    border:1px solid var(--rule);border-left:3px solid var(--flag);border-radius:3px;
+  }
+  .callout .eyebrow{color:var(--flag)}
+  .callout p{margin-top:8px;color:var(--ink-soft)}
+  .callout b{color:var(--ink)}
+
+  code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.86em;color:var(--ink);background:var(--flag-bg);padding:1px 5px;border-radius:2px}
+
+  footer{
+    margin-top:clamp(44px,7vw,72px);padding-top:20px;border-top:1px solid var(--rule);
+    font-size:.86rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 24px;
+  }
+  footer a{color:var(--signal);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+  @media (max-width:640px){
+    .tiles{grid-template-columns:1fr}
+    ol.log li{grid-template-columns:1fr;gap:4px}
+    .wrap{padding-inline:16px}
+  }
+</style>
+<style>
+  html{color-scheme:light}
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{margin:0}
+  img{max-width:100%}
+  .backlink{
+    display:inline-flex;align-items:center;gap:7px;margin-bottom:28px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;letter-spacing:.06em;
+    text-transform:uppercase;text-decoration:none;color:var(--ink-faint);
+  }
+  .backlink:hover{color:var(--signal)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="backlink" href="../../">&larr; Back to portfolio</a>
+
+  <header>
+    <p class="eyebrow">Paid media audit &middot; Meta message ads</p>
+    <h1>More conversations on a smaller budget</h1>
+    <p class="lede measure">An Instagram Direct lead account was handing three quarters of one ad set&rsquo;s budget to its most expensive creative. I paused it, rebuilt the creative bench and concentrated spend where conversations were actually cheap. Over the next 15 days the account produced <b>16% more conversations on 28% less spend</b>.</p>
+    <div class="meta">
+      <span><b>Role</b> Paid media, sole operator</span>
+      <span><b>Client</b> High-ticket security doors &amp; gates, Argentina (anonymized)</span>
+      <span><b>Channel</b> Meta &rarr; Instagram Direct</span>
+      <span><b>Window</b> 9 Sep &ndash; 8 Oct 2026</span>
+    </div>
+  </header>
+
+  <div class="tiles">
+    <div class="tile">
+      <p class="k">Cost per conversation</p>
+      <p class="v">&minus;37.7%</p>
+      <p class="n">USD 3.21 &rarr; 2.00<br><span style="color:var(--ink-faint)">ARS 4,992 &rarr; 3,109</span></p>
+    </div>
+    <div class="tile up">
+      <p class="k">Conversations started</p>
+      <p class="v">+16.3%</p>
+      <p class="n">240 &rarr; 279<br><span style="color:var(--ink-faint)">15 days each window</span></p>
+    </div>
+    <div class="tile">
+      <p class="k">Spend</p>
+      <p class="v">&minus;27.6%</p>
+      <p class="n">USD 770 &rarr; 558<br><span style="color:var(--ink-faint)">ARS 1,198,118 &rarr; 867,300</span></p>
+    </div>
+  </div>
+
+  <section class="measure stack">
+    <h2>The account</h2>
+    <p>The client sells and installs high-ticket security doors and gates. Every lead arrives as an Instagram Direct conversation, so the account optimises for conversations started, not for purchases &mdash; the client never reports back which conversations turned into sales. Two always-on campaigns, both ABO: one aimed at a broad mid-value audience, one at interest-based audiences around gates. I have administered this account and two sister accounts for three years.</p>
+    <p>This account had been running the same way since March. Nobody had asked for a review, which is usually when an account is worth reviewing.</p>
+  </section>
+
+  <section>
+    <h2 class="measure">What the audit found</h2>
+    <ul class="plain measure">
+      <li><b>One creative was absorbing 72.6% of the ad set&rsquo;s budget</b> (ARS 523,736 of 721,064) while delivering conversations at 12,470 &mdash; 2.5&times; the account average.</li>
+      <li><b>Two creatives were spending with zero conversations</b>, and a third had one conversation for 9,939.</li>
+      <li><b>The creative history was unreadable.</b> New assets had been swapped inside existing ads, so a single ad name covered several different videos and no before/after could be reconstructed from the account itself.</li>
+      <li><b>Budget was allocated by inertia</b>, not by cost per conversation: the expensive audience held the larger daily budget.</li>
+    </ul>
+    <div class="callout measure">
+      <p class="eyebrow">The real finding</p>
+      <p>The account was not underperforming because of the creatives it had. It was underperforming because <b>the worst creative had the most money</b>, and nothing in the setup was going to correct that on its own.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="measure">What I changed</h2>
+    <ol class="log measure">
+      <li>
+        <time datetime="2026-09-23">23 Sep</time>
+        <div>
+          <b>Paused the budget holder</b>
+          <p>Reel10 off. Its spend was released to the creatives already converting below the ad set average.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-09-24">24 Sep</time>
+        <div>
+          <b>Rebuilt the creative bench</b>
+          <p>Nine creatives into test on the mid-value audience &mdash; four door-focused reels, a multi-product cut and four engagement variants &mdash; each launched as a new ad instead of a swap inside an old one.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-09-25">25 Sep</time>
+        <div>
+          <b>Shifted weight to the cheap audience</b>
+          <p>The interest-based gate campaign kept its budget while the broad audience lost 40% of its spend. Conversations, not impressions, decided the split.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-10-01">1 Oct</time>
+        <div>
+          <b>Cut the losers, kept three</b>
+          <p>Every variant above the ad set average was paused once it had delivered enough conversations to read. Three stayed live.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-10-08">8 Oct</time>
+        <div>
+          <b>Read the result at equal windows</b>
+          <p>15 days before the change against 15 days after, same account, same objective, same attribution setting.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 class="measure">Result</h2>
+    <div class="tablewrap">
+      <table>
+        <caption>15 days before &middot; 15 days after &middot; ARS</caption>
+        <thead>
+          <tr>
+            <th scope="col">Campaign</th>
+            <th scope="col">Spend before</th>
+            <th scope="col">Spend after</th>
+            <th scope="col">Conv. before</th>
+            <th scope="col">Conv. after</th>
+            <th scope="col">Cost/conv. before</th>
+            <th scope="col">Cost/conv. after</th>
+            <th scope="col">Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Broad, mid-value audience</th>
+            <td>721,064</td><td>431,881</td>
+            <td>52</td><td>54</td>
+            <td>13,867</td><td>7,998</td>
+            <td class="delta">&minus;42.3%</td>
+          </tr>
+          <tr>
+            <th scope="row">Interest-based, gates</th>
+            <td>477,054</td><td>435,419</td>
+            <td>188</td><td>225</td>
+            <td>2,538</td><td>1,935</td>
+            <td class="delta">&minus;23.7%</td>
+          </tr>
+          <tr class="total">
+            <th scope="row">Account</th>
+            <td>1,198,118</td><td>867,300</td>
+            <td>240</td><td>279</td>
+            <td>4,992</td><td>3,109</td>
+            <td class="delta">&minus;37.7%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note measure">In dollars, cost per conversation went from <b>USD 3.21 to USD 2.00</b> &mdash; USD 8.92 to 5.14 on the broad audience, USD 1.63 to 1.24 on the interest-based one. Those 279 conversations would have cost ARS 1,392,813 at the old efficiency. They cost 867,300 &mdash; <b>ARS 525,513 (USD 338) of spend that did not have to be made</b>. Link click-through rate rose in both campaigns over the same window: 0.98% &rarr; 1.12% on the broad audience, 2.10% &rarr; 3.18% on the interest-based one.</p>
+  </section>
+
+  <section>
+    <h2 class="measure">Creative level, mid-value audience</h2>
+    <p class="measure" style="color:var(--ink-soft);margin-top:14px">The ad that used to hold the budget against the three that replaced it.</p>
+    <div class="tablewrap">
+      <table>
+        <caption>Mid-value ad set &middot; cost per conversation, ARS</caption>
+        <thead>
+          <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Window</th>
+            <th scope="col">Spend</th>
+            <th scope="col">Share of set</th>
+            <th scope="col">Conv.</th>
+            <th scope="col">Cost/conv.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Reel10 <span class="off">(paused 23 Sep)</span></th>
+            <td>Before</td><td>523,736</td><td>72.6%</td><td>42</td><td>12,470</td>
+          </tr>
+          <tr>
+            <th scope="row">Door reel, variant 2</th>
+            <td>Before</td><td>171,449</td><td>23.8%</td><td>9</td><td>19,050</td>
+          </tr>
+          <tr>
+            <th scope="row">Engagement variant<span class="live">live</span></th>
+            <td>After</td><td>24,678</td><td>5.7%</td><td>6</td><td>4,113</td>
+          </tr>
+          <tr>
+            <th scope="row">Door reel, variant 3<span class="live">live</span></th>
+            <td>After</td><td>53,781</td><td>12.5%</td><td>11</td><td>4,889</td>
+          </tr>
+          <tr>
+            <th scope="row">Door reel, variant 1<span class="live">live</span></th>
+            <td>After</td><td>34,977</td><td>8.1%</td><td>7</td><td>4,997</td>
+          </tr>
+          <tr class="total">
+            <th scope="row">The three live creatives</th>
+            <td>After</td><td>113,435</td><td>26.3%</td><td>24</td><td>4,726</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note measure">The bench now running delivers conversations at ARS 4,726 (USD 3.04) against ARS 12,470 (USD 8.02) &mdash; <b>62% below</b> the creative that used to take three quarters of the budget, on a quarter of the spend.</p>
+  </section>
+
+  <section>
+    <h2 class="measure">What the numbers say</h2>
+    <ul class="plain measure">
+      <li><b>The efficiency engine is the interest-based campaign.</b> At ARS 1,935 (USD 1.24) per conversation it is roughly four times cheaper than the broad audience, and it absorbed the extra volume without its cost rising.</li>
+      <li><b>The broad mid-value audience is structurally expensive</b>, even after a 42% improvement. The next move there is audience work, not more creative testing.</li>
+      <li><b>Creative concentration was the whole problem.</b> No new budget, no new audience and no new objective were needed to take 38% out of the cost per conversation.</li>
+      <li><b>Process was part of the fix.</b> Four of the nine test creatives shipped under Meta&rsquo;s default ad name, which is how the history became unreadable in the first place. Every ad now ships as <code>concept_variant_date</code>, so the next audit reads itself.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="measure">Method and limits</h2>
+    <ul class="plain measure">
+      <li>Two equal 15-day windows, 9&ndash;23 September against 24 September&ndash;8 October 2026. The final day is partial, so the second window is reported slightly short.</li>
+      <li>Meta-reported conversations started, 7-day click / 1-day view attribution, exported from Ads Manager at campaign, ad set and ad level.</li>
+      <li>The client does not share sales data, so cost per conversation is the working KPI. No CPA or ROAS claim is made here.</li>
+      <li>Ad-level decisions rest on 2 to 13 conversations per creative. That is directional, not conclusive, which is why testing is still running rather than finished.</li>
+      <li>This is a before/after read on a live account, not a controlled experiment: seasonality and auction conditions are not isolated.</li>
+      <li>Cost per conversation is still above where the sister accounts sit (ARS 1,500&ndash;3,000, or USD 0.96&ndash;1.93). The interest-based campaign is now inside that band; the broad audience is not.</li>
+      <li>Peso figures are converted at ARS 1,555 per USD, the selling rate on 8 October 2026. This is a small-budget account &mdash; ARS 30,000 a day per ad set, about USD 19 &mdash; so the result is about efficiency, not scale.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="measure">Next 15 days</h2>
+    <ul class="plain measure">
+      <li>Rebuild the mid-value audience instead of testing more creative against it.</li>
+      <li>Hold one test slot per week on the interest-based campaign, so the winning bench keeps being challenged.</li>
+      <li>Instrument the handoff: conversation volume is measurable, what happens after it is not. Getting even a weekly count of quoted jobs back from the client would turn this from a cost metric into a revenue one.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Jonathan Pernia &middot; Paid media, tracking &amp; reporting</span>
+    <span><a href="https://www.linkedin.com/in/jonathan-pernia/">linkedin.com/in/jonathan-pernia</a></span>
+    <span><a href="https://jonaticho18.github.io/Portfolio-Jonathan-Pernia/">Portfolio</a></span>
+    <span>Client and account names withheld; figures exported from Meta Ads Manager, 8 Oct 2026.</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
