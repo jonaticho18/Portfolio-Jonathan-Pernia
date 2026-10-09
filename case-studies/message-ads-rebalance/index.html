@@ -14,100 +14,111 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-  /* Layout: slide-like sections. Each opens with one spoken headline; the detail sits
-     under it in smaller type for the reader. Data blocks break out of the text measure. */
+  /* Layout: each section is a full-bleed band, alternating tinted and white, so the page
+     reads as a deck. One spoken headline per band; the detail sits under it for the reader. */
   :root{
-    --paper:#F6F8FB;
+    --band-tint:#E7F2EA;
+    --band-plain:#FFFFFF;
     --surface:#FFFFFF;
     --ink:#0F1B2D;
-    --ink-soft:#4B5870;
-    --ink-faint:#76819A;
-    --rule:#DCE2EC;
+    --ink-soft:#49566E;
+    --ink-faint:#737F97;
+    --rule:#D7DFE9;
+    --rule-tint:#C7DCCE;
     --signal:#2463EB;
     --signal-soft:#A9C2F5;
     --flag:#9A6310;
-    --flag-bg:#FDF4E3;
+    --flag-bg:#FBF2E0;
     --good:#0C6E55;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#0A1322; --surface:#111E33; --ink:#E8EEF7; --ink-soft:#A3B1C6;
-      --ink-faint:#7C8AA2; --rule:#1E2D47; --signal:#6D99F7; --signal-soft:#33507F;
+      --band-tint:#0D2019; --band-plain:#0A1322; --surface:#132135;
+      --ink:#E8EEF7; --ink-soft:#A3B1C6; --ink-faint:#7C8AA2;
+      --rule:#223150; --rule-tint:#1D3A2E;
+      --signal:#6D99F7; --signal-soft:#33507F;
       --flag:#F5B942; --flag-bg:#1C2437; --good:#43C8A0; color-scheme: dark;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#0A1322; --surface:#111E33; --ink:#E8EEF7; --ink-soft:#A3B1C6;
-    --ink-faint:#7C8AA2; --rule:#1E2D47; --signal:#6D99F7; --signal-soft:#33507F;
+    --band-tint:#0D2019; --band-plain:#0A1322; --surface:#132135;
+    --ink:#E8EEF7; --ink-soft:#A3B1C6; --ink-faint:#7C8AA2;
+    --rule:#223150; --rule-tint:#1D3A2E;
+    --signal:#6D99F7; --signal-soft:#33507F;
     --flag:#F5B942; --flag-bg:#1C2437; --good:#43C8A0; color-scheme: dark;
   }
 
   *{box-sizing:border-box}
   body{
-    margin:0; background:var(--paper); color:var(--ink);
+    margin:0; background:var(--band-plain); color:var(--ink);
     font-family:"Instrument Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
     font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1000px;margin:0 auto;padding-inline:20px;padding-block:clamp(30px,5vw,58px)}
-  .measure{max-width:62ch}
+
+  /* the bands */
+  .band{width:100%}
+  .band.tint{background:var(--band-tint)}
+  .band.plain{background:var(--band-plain)}
+  .inner{max-width:1000px;margin:0 auto;padding-inline:20px;padding-block:clamp(38px,6vw,68px)}
+  .measure{max-width:60ch}
 
   h1,h2{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif;text-wrap:balance;margin:0}
-  h1{font-size:clamp(2rem,5.4vw,3.15rem);font-weight:700;line-height:1.03;letter-spacing:-.024em}
-  h2{font-size:clamp(1.3rem,3.1vw,1.72rem);font-weight:700;line-height:1.14;letter-spacing:-.016em}
+  h1{font-size:clamp(2.05rem,5.6vw,3.3rem);font-weight:700;line-height:1.02;letter-spacing:-.025em}
+  h2{font-size:clamp(1.45rem,3.6vw,2.05rem);font-weight:700;line-height:1.12;letter-spacing:-.018em}
   p{margin:0}
 
   .eyebrow{
     font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;font-weight:500;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--signal);
+    letter-spacing:.2em;text-transform:uppercase;color:var(--signal);
   }
-  .lede{font-size:1.12rem;color:var(--ink-soft);margin-top:16px}
+  .label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.71rem;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);
+    display:flex;align-items:center;gap:11px;margin-bottom:16px;
+  }
+  .label::before{content:"";width:22px;height:2px;background:var(--signal);flex:none}
+  .lede{font-size:1.13rem;color:var(--ink-soft);margin-top:18px}
   .lede b{color:var(--ink);font-weight:600}
+  .body{color:var(--ink-soft)}
+  h2 + .body, h2 + .stack, h2 + ul, h2 + figure, h2 + .tiles, h2 + ol{margin-top:24px}
+  .stack{display:flex;flex-direction:column;gap:13px}
 
-  header{display:flex;flex-direction:column;gap:12px}
   .meta{
-    display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:26px;padding-top:16px;
+    display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:28px;padding-top:17px;
     border-top:1px solid var(--rule);
     font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.78rem;color:var(--ink-faint);
   }
   .meta span{white-space:nowrap}
   .meta b{color:var(--ink-soft);font-weight:500}
 
-  /* a section = a slide */
-  section{margin-top:clamp(42px,6.5vw,74px)}
-  .label{
-    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;
-  }
-  section > p, section > .stack{margin-top:14px}
-  .stack{display:flex;flex-direction:column;gap:13px}
-  .body{color:var(--ink-soft)}
-
   /* headline figures */
-  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:30px}
-  .tile{min-width:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:19px 17px 16px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .tile{min-width:0;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:19px 17px 16px}
   .tile .k{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
   .tile .v{
     font-family:"Bricolage Grotesque",sans-serif;font-weight:700;letter-spacing:-.03em;
-    font-size:clamp(1.9rem,5.2vw,2.5rem);line-height:1;margin-top:11px;
+    font-size:clamp(1.9rem,5.2vw,2.55rem);line-height:1;margin-top:11px;
     font-variant-numeric:tabular-nums;color:var(--good);
   }
   .tile.up .v{color:var(--signal)}
   .tile .n{font-size:.83rem;color:var(--ink-soft);margin-top:7px;font-variant-numeric:tabular-nums}
   .tile .n span{color:var(--ink-faint)}
 
-  /* chart */
-  figure{margin:24px 0 0}
+  /* chart + screenshots */
+  figure{margin:26px 0 0}
   .figtitle{font-weight:600;font-size:.98rem}
   .figsub{font-size:.85rem;color:var(--ink-faint);margin-top:2px}
   .legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:.84rem;color:var(--ink-soft)}
   .legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:7px;vertical-align:-1px}
   .scroller{overflow-x:auto;margin-top:12px}
   .scroller svg{display:block;width:100%;min-width:660px;height:auto}
-  figcaption{font-size:.83rem;color:var(--ink-faint);margin-top:10px;max-width:62ch}
+  .shot{border:1px solid var(--rule);border-radius:4px;background:var(--surface);overflow-x:auto}
+  .shot img{display:block;width:100%;min-width:700px;height:auto}
+  figcaption{font-size:.84rem;color:var(--ink-faint);margin-top:11px;max-width:60ch}
 
   /* tables */
-  .tablewrap{overflow-x:auto;margin-top:20px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+  .tablewrap{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
   table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
   caption{
     caption-side:top;text-align:left;padding:14px 16px 0;
@@ -131,24 +142,24 @@
     letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
     border:1px solid currentColor;border-radius:2px;padding:1px 5px;margin-left:8px;vertical-align:1px;
   }
-  .note{font-size:.85rem;color:var(--ink-faint);margin-top:11px;max-width:62ch}
+  .note{font-size:.85rem;color:var(--ink-faint);margin-top:12px;max-width:60ch}
   .note b{color:var(--ink-soft)}
 
   /* change log */
-  ol.log{list-style:none;margin:18px 0 0;padding:0}
-  ol.log li{display:grid;grid-template-columns:84px 1fr;gap:18px;padding:13px 0;border-top:1px solid var(--rule)}
+  ol.log{list-style:none;margin:0;padding:0}
+  ol.log li{display:grid;grid-template-columns:84px 1fr;gap:18px;padding:13px 0;border-top:1px solid var(--rule-tint)}
   ol.log li:first-child{border-top:none;padding-top:2px}
   ol.log time{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;color:var(--signal);padding-top:3px}
   ol.log b{display:block;font-weight:600}
   ol.log p{color:var(--ink-soft);font-size:.93rem;margin-top:2px}
 
-  ul.plain{margin:16px 0 0;padding-left:1.15em;color:var(--ink-soft);display:flex;flex-direction:column;gap:11px;max-width:62ch}
+  ul.plain{margin:0;padding-left:1.15em;color:var(--ink-soft);display:flex;flex-direction:column;gap:11px;max-width:60ch}
   ul.plain li::marker{color:var(--signal)}
   ul.plain b{color:var(--ink);font-weight:600}
 
   .callout{
-    margin-top:22px;padding:18px 20px;background:var(--surface);
-    border:1px solid var(--rule);border-left:3px solid var(--flag);border-radius:3px;max-width:62ch;
+    margin-top:24px;padding:18px 20px;background:var(--surface);
+    border:1px solid var(--rule);border-left:3px solid var(--flag);border-radius:4px;max-width:60ch;
   }
   .callout .eyebrow{color:var(--flag);letter-spacing:.16em}
   .callout p{margin-top:8px;color:var(--ink-soft)}
@@ -156,18 +167,16 @@
 
   code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.86em;color:var(--ink);background:var(--flag-bg);padding:1px 5px;border-radius:2px}
 
-  footer{
-    margin-top:clamp(46px,7vw,76px);padding-top:20px;border-top:1px solid var(--rule);
-    font-size:.86rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 24px;
-  }
-  footer a{color:var(--signal);text-decoration:none}
-  footer a:hover{text-decoration:underline}
+  footer .inner{padding-block:26px 34px;border-top:1px solid var(--rule)}
+  .footrow{font-size:.86rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 24px}
+  .footrow a{color:var(--signal);text-decoration:none}
+  .footrow a:hover{text-decoration:underline}
   a:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 
   @media (max-width:640px){
     .tiles{grid-template-columns:1fr}
     ol.log li{grid-template-columns:1fr;gap:3px}
-    .wrap{padding-inline:16px}
+    .inner{padding-inline:16px}
   }
 </style>
 <style>
@@ -175,17 +184,15 @@
   :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
   body{margin:0}
   img{max-width:100%}
-  .backlink{display:inline-flex;align-items:center;gap:7px;margin-bottom:26px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-faint)}
+  .backlink{display:inline-flex;align-items:center;gap:7px;margin-bottom:28px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-faint)}
   .backlink:hover{color:var(--signal)}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-
-  <a class="backlink" href="../../">&larr; Back to portfolio</a>
-
-  <header>
+<header class="band plain">
+  <div class="inner">
+    <a class="backlink" href="../../">&larr; Back to portfolio</a>
     <p class="eyebrow">Paid media audit &middot; Meta message ads</p>
     <h1>More conversations on a smaller budget</h1>
     <p class="lede measure">One creative was taking three quarters of an ad set&rsquo;s budget at the worst cost per lead in the account. I paused it, rebuilt the creative bench and moved the money to what was already converting. Fifteen days later the account was producing <b>more conversations on a quarter less spend</b>.</p>
@@ -195,36 +202,46 @@
       <span><b>Channel</b> Meta &rarr; Instagram Direct</span>
       <span><b>Window</b> 9 Sep &ndash; 8 Oct 2026</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
+<section class="band tint">
+  <div class="inner">
     <p class="label">The client</p>
     <h2 class="measure">Security doors and gates. Three years on the account.</h2>
     <div class="stack measure">
       <p class="body">High-ticket installations, sold one conversation at a time. Every lead arrives as an Instagram Direct message, so the account optimises for conversations started &mdash; not for purchases. The client never reports back which conversations became sales, which is why cost per conversation is the KPI I can actually defend.</p>
       <p class="body">I administer three ad accounts for this client and run them end to end on my own &mdash; strategy, creative, optimisation and reporting. No team, no account manager in between. This is one of those accounts, and it had been running the same way since March. Nobody asked for a review, which is usually when an account is worth reviewing.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band plain">
+  <div class="inner">
     <p class="label">The audit</p>
     <h2 class="measure">One ad had most of the money and the worst cost in the account.</h2>
     <ul class="plain">
-      <li><b>Three quarters of the ad set&rsquo;s budget sat on one creative</b> &mdash; ARS 523,736 of 721,064 &mdash; delivering conversations at 2.5&times; the account average.</li>
+      <li><b>Three quarters of the ad set&rsquo;s budget sat on one creative</b>, delivering conversations at 2.5&times; the account average.</li>
       <li><b>Two creatives were spending and returning nothing</b>, and a third had a single conversation to show for its spend.</li>
-      <li><b>The creative history was unreadable.</b> New videos had been swapped inside existing ads, so one ad name covered several different pieces and no before/after could be reconstructed from the account itself.</li>
+      <li><b>The creative history was unreadable.</b> New videos had been swapped inside existing ads, so one ad name covered several different pieces.</li>
       <li><b>Budget followed the original setup, not performance.</b> The expensive audience held the larger daily budget because that is how it was built in March.</li>
     </ul>
+    <figure>
+      <div class="shot"><img src="img/before-ads.png" alt="Ads Manager, ad level, 9 to 23 September: the top ad spent 523,736 pesos for 42 conversations at 12,469 each, while two other ads spent with no conversations at all." loading="lazy" width="1490" height="452"></div>
+      <figcaption>The ad set in the fifteen days before the change, sorted by spend. The top row is the ad that was holding the budget &mdash; and paying the highest cost per conversation of anything that converted.</figcaption>
+    </figure>
     <div class="callout">
       <p class="eyebrow">The real finding</p>
       <p>The account was not losing money because of the creatives it had. It was losing money because <b>the worst creative had the most budget</b>, and nothing in the setup was going to correct that on its own.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band tint">
+  <div class="inner">
     <p class="label">The change</p>
     <h2 class="measure">I moved the money to what was already converting.</h2>
-    <ol class="log">
+    <ol class="log" style="margin-top:18px">
       <li>
         <time datetime="2026-09-23">23 Sep</time>
         <div>
@@ -250,7 +267,7 @@
         <time datetime="2026-10-01">1 Oct</time>
         <div>
           <b>Cut the losers, kept three</b>
-          <p>Every variant above the ad set average was paused once it had delivered enough conversations to read. Three stayed live.</p>
+          <p>Every variant above the ad set average was paused once it had delivered enough conversations to read.</p>
         </div>
       </li>
       <li>
@@ -261,13 +278,15 @@
         </div>
       </li>
     </ol>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band plain">
+  <div class="inner">
     <p class="label">The result</p>
     <h2 class="measure">Cost per conversation fell by more than a third.</h2>
 
-    <div class="tiles">
+    <div class="tiles" style="margin-top:26px">
       <div class="tile">
         <p class="k">Cost per conversation</p>
         <p class="v">&minus;37.8%</p>
@@ -294,7 +313,6 @@
       </div>
       <div class="scroller">
         <svg viewBox="0 0 760 272" role="img" aria-label="Cost per conversation fell in both campaigns: the account from 4,992 to 3,104 pesos, the interest-based campaign from 2,538 to 1,954, and the broad audience from 13,867 to 7,787.">
-          <!-- grid -->
           <g stroke="var(--rule)" stroke-width="1">
             <line x1="160.5" y1="18" x2="160.5" y2="228"></line>
             <line x1="331.9" y1="18" x2="331.9" y2="228" stroke-dasharray="2 4"></line>
@@ -308,7 +326,6 @@
             <text x="674.7" y="246">15,000</text>
           </g>
 
-          <!-- Account -->
           <text x="148" y="46" text-anchor="end" fill="var(--ink)" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600">Account</text>
           <path d="M160 28 h167.1 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal-soft)"></path>
           <path d="M160 52 h102.4 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal)"></path>
@@ -316,7 +333,6 @@
           <text x="274" y="66" fill="var(--ink)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500">3,104</text>
           <text x="320" y="66" fill="var(--good)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500">&minus;37.8%</text>
 
-          <!-- Interest-based -->
           <text x="148" y="118" text-anchor="end" fill="var(--ink)" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600">Interest-based</text>
           <path d="M160 100 h83 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal-soft)"></path>
           <path d="M160 124 h63 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal)"></path>
@@ -324,7 +340,6 @@
           <text x="235" y="138" fill="var(--ink)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500">1,954</text>
           <text x="281" y="138" fill="var(--good)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500">&minus;23.0%</text>
 
-          <!-- Broad -->
           <text x="148" y="190" text-anchor="end" fill="var(--ink)" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600">Broad audience</text>
           <path d="M160 172 h471.4 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal-soft)"></path>
           <path d="M160 196 h263 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 H160 Z" fill="var(--signal)"></path>
@@ -333,7 +348,19 @@
           <text x="481" y="210" fill="var(--good)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500">&minus;43.8%</text>
         </svg>
       </div>
-      <figcaption>Both campaigns are on the same scale, which is the other finding: even after a 44% improvement, the broad audience still costs four times what the interest-based one does.</figcaption>
+      <figcaption>Both campaigns sit on the same scale, which is the other finding: even after a 44% improvement, the broad audience still costs four times what the interest-based one does.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="inner">
+    <p class="label">The check</p>
+    <h2 class="measure">Both campaigns got cheaper on their own.</h2>
+    <p class="body measure">The obvious objection to an account-level improvement is that it is an averaging trick: move budget to the cheap campaign and the blended number falls without anything actually improving. That is not what happened. Cost per conversation dropped <b style="color:var(--ink)">23% in the interest-based campaign and 44% in the broad one, independently</b>.</p>
+    <figure>
+      <div class="shot"><img src="img/comparison.png" alt="Ads Manager comparing 24 September to 8 October against 9 to 23 September: spend down 6.6% and 39.5%, conversations up 21.3% and 7.7%, cost per result down 23.0% and 43.8%." loading="lazy" width="1800" height="220"></div>
+      <figcaption>Ads Manager&rsquo;s own period comparison. Spend down in both campaigns, conversations up in both, cost per result down in both.</figcaption>
     </figure>
 
     <div class="tablewrap">
@@ -342,12 +369,9 @@
         <thead>
           <tr>
             <th scope="col">Campaign</th>
-            <th scope="col">Spend before</th>
-            <th scope="col">Spend after</th>
-            <th scope="col">Conv. before</th>
-            <th scope="col">Conv. after</th>
-            <th scope="col">Cost/conv. before</th>
-            <th scope="col">Cost/conv. after</th>
+            <th scope="col">Spend before</th><th scope="col">Spend after</th>
+            <th scope="col">Conv. before</th><th scope="col">Conv. after</th>
+            <th scope="col">Cost/conv. before</th><th scope="col">Cost/conv. after</th>
             <th scope="col">Change</th>
           </tr>
         </thead>
@@ -370,16 +394,12 @@
         </tbody>
       </table>
     </div>
-    <p class="note">Those 284 conversations would have cost ARS 1,417,773 at the old efficiency. They cost 881,663 &mdash; <b>ARS 536,110, about USD 345, of spend that did not have to be made</b>. Link click-through rate rose in both campaigns over the same window.</p>
-  </section>
+    <p class="note">Those 284 conversations would have cost ARS 1,417,773 at the old efficiency. They cost 881,663 &mdash; <b>about USD 345 of spend that did not have to be made</b>.</p>
+  </div>
+</section>
 
-  <section>
-    <p class="label">The check</p>
-    <h2 class="measure">Both campaigns got cheaper on their own.</h2>
-    <p class="body measure">The obvious objection to an account-level improvement is that it is an averaging trick: move budget to the cheap campaign and the blended number falls without anything actually improving. That is not what happened here. Cost per conversation dropped <b style="color:var(--ink)">23% in the interest-based campaign and 44% in the broad one, independently</b>. Both engines got cheaper, and the account average followed.</p>
-  </section>
-
-  <section>
+<section class="band plain">
+  <div class="inner">
     <p class="label">Creative level</p>
     <h2 class="measure">The three creatives still running are 63% cheaper than the one I paused.</h2>
     <div class="tablewrap">
@@ -420,9 +440,11 @@
       </table>
     </div>
     <p class="note">Four of the nine test creatives shipped under Meta&rsquo;s default ad name, which is how the history became unreadable in the first place. Every ad now ships as <code>concept_variant_date</code>, so the next audit reads itself.</p>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band tint">
+  <div class="inner">
     <p class="label">What&rsquo;s next</p>
     <h2 class="measure">The next gain is in the audience, not the creative.</h2>
     <ul class="plain">
@@ -430,9 +452,11 @@
       <li><b>Hold one test slot a week</b> on the interest-based campaign, so the winning bench keeps being challenged.</li>
       <li><b>Instrument the handoff.</b> Conversation volume is measurable; what happens after it is not. A weekly count of quoted jobs from the client would turn this from a cost metric into a revenue one.</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band plain">
+  <div class="inner">
     <p class="label">Method</p>
     <h2 class="measure">How I measured it, and what it does not prove.</h2>
     <ul class="plain">
@@ -443,16 +467,19 @@
       <li>Cost per conversation is still above the sister accounts (ARS 1,500&ndash;3,000). The interest-based campaign is now inside that band; the broad audience is not.</li>
       <li>Pesos converted at ARS 1,555 per USD, 8 October 2026. This is a small-budget account &mdash; about USD 19 a day per ad set &mdash; so the result is about efficiency, not scale.</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <span>Jonathan Pernia &middot; Paid media, tracking &amp; reporting</span>
-    <span><a href="https://www.linkedin.com/in/jonathan-pernia/">linkedin.com/in/jonathan-pernia</a></span>
-    <span><a href="https://jonaticho18.github.io/Portfolio-Jonathan-Pernia/">Portfolio</a></span>
-    <span>Client and account names withheld. Figures exported from Meta Ads Manager.</span>
-  </footer>
-
-</div>
+<footer class="band plain">
+  <div class="inner">
+    <div class="footrow">
+      <span>Jonathan Pernia &middot; Paid media, tracking &amp; reporting</span>
+      <span><a href="https://www.linkedin.com/in/jonathan-pernia/">linkedin.com/in/jonathan-pernia</a></span>
+      <span><a href="https://jonaticho18.github.io/Portfolio-Jonathan-Pernia/">Portfolio</a></span>
+      <span>Client and account names withheld. Figures exported from Meta Ads Manager.</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
